@@ -82,8 +82,6 @@ class Pop {
 		let rand;
 		let maxFitness = 0;
     
-		console.log("Mean : " + str(this.mean()));
-    console.log("S.D : " + str(this.standardDeviation()));
 		
 		// Getting the highest fitness
 		for (i=0;i<this.pop.length; i++) {
@@ -155,8 +153,6 @@ class Pop {
     append(newPop, newP2);
     append(newPop, newP3);
     append(newPop, newP4);
-
-    console.log("hey!");
   }
     
 
