@@ -6,6 +6,7 @@ let RUN = true;
 let highScore = 0;
 let generation = 1;
 let b1, b2, b3, b4, b5, b6, b7;
+let video;
 
 function setup() {
   createCanvas(800, 400);
@@ -14,6 +15,8 @@ function setup() {
   g = createVector(0, 0.2);
   textSize(30);
   frameRate(1000);
+  video = createCapture(VIDEO);
+  video.hide();
   
   //Buttons
   let buttonGap = 40;
@@ -35,6 +38,14 @@ function draw() {
   if (RUN) {
     frames += 1;
     background(34, 128, 178);
+
+    // Puts a flipped video on the background
+    push();
+    scale(-1,1);
+    translate(-400,0);
+    image(video, 0, 0, 400,400);
+    pop();
+    
     
     for (i = 0; i < p.length; i++) {
       p[i].update();
