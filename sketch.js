@@ -106,9 +106,10 @@ function draw() {
     append(p, new Pipe());
     RUN = true;
     generation += 1;
+    console.log("Next Generation Time!")
   }
   
-  // Graph Drawing Zone
+  // -------- Graph Drawing Zone --------
   fill(255);
   rect(400,0,400,400);
   
