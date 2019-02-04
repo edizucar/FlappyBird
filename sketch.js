@@ -17,36 +17,36 @@ function setup() {
   frameRate(1000);
   video = createCapture(VIDEO);
   video.hide();
-  
+
   //Buttons
   let buttonGap = 40;
-  
-  b1 = new Button(false, "bar", 750, buttonGap, [0,255,0]);
-  b2 = new Button(false, "bar", 750, buttonGap*2, [0,0,255]);
-  b3 = new Button(false, "bar", 750, buttonGap*3, [255,0,0]);
-  b4 = new Button(false, "bar", 750, buttonGap*4, [0,255,0]);
-  b5 = new Button(false, "bar", 750, buttonGap*5, [0,0,255]);
-  b6 = new Button(false, "bar", 750, buttonGap*6, [255,0,0]);
-  b7 = new Button(false, "bar", 750, buttonGap*7, [0,255,0]);
-  
+
+  b1 = new Button(false, "bar", 750, buttonGap, [0, 255, 0]);
+  b2 = new Button(false, "bar", 750, buttonGap * 2, [0, 0, 255]);
+  b3 = new Button(false, "bar", 750, buttonGap * 3, [255, 0, 0]);
+  b4 = new Button(false, "bar", 750, buttonGap * 4, [0, 255, 0]);
+  b5 = new Button(false, "bar", 750, buttonGap * 5, [0, 0, 255]);
+  b6 = new Button(false, "bar", 750, buttonGap * 6, [255, 0, 0]);
+  b7 = new Button(false, "bar", 750, buttonGap * 7, [0, 255, 0]);
+
 }
 
 function draw() {
-  
-  
-  
+
+
+
   if (RUN) {
     frames += 1;
     background(34, 128, 178);
 
     // Puts a flipped video on the background
     push();
-    scale(-1,1);
-    translate(-400,0);
-    image(video, 0, 0, 400,400);
+    scale(-1, 1);
+    translate(-400, 0);
+    image(video, 0, 0, 400, 400);
     pop();
-    
-    
+
+
     for (i = 0; i < p.length; i++) {
       p[i].update();
       p[i].draw();
@@ -82,60 +82,59 @@ function draw() {
 
 
     myPop.bounce(currentPipe);
-    
+
     stroke(255, 0, 0);
     strokeWeight(5);
-    line(20,myPop.averageY(), 60, myPop.averageY());
+    line(20, myPop.averageY(), 60, myPop.averageY());
     stroke(0);
     strokeWeight(1);
 
     fill(0);
     textSize(15);
-    
+
     if (frames > highScore) {
       highScore = frames;
     }
-    
+
     text(str(frames), 400 - 50, 23);
     text("Highscore : " + str(highScore), 3 * 400 / 4 - 50, 400 - 23);
     text("Gen : " + str(generation), 400 / 4 - 50, 400 - 23);
-    text(str(myPop.aliveNum()), 400/4 - 30, 23);
-    
-    fill(255,0,0);
-    rect(400/4, 10, 200, 10);
-    fill(0,255,0);
-    rect(400/4, 10, myPop.aliveNum()/myPop.pop.length * 200, 10);
-    
-  }
-  else {
+    text(str(myPop.aliveNum()), 400 / 4 - 30, 23);
+
+    fill(255, 0, 0);
+    rect(400 / 4, 10, 200, 10);
+    fill(0, 255, 0);
+    rect(400 / 4, 10, myPop.aliveNum() / myPop.pop.length * 200, 10);
+
+  } else {
     myPop.nextGen();
-    
+
     // ------- RESET ALL VARIABLES EXCEPT MYPOP --------
-    
+
     frames = 0;
     p = [];
     append(p, new Pipe());
     RUN = true;
     generation += 1;
   }
-  
+
   // -------- Graph Drawing Zone --------
   fill(255);
-  rect(400,0,400,400);
-  
+  rect(400, 0, 400, 400);
+
 
   fill(0);
   stroke(0);
-  
-  text("Generation : " + str(generation-1), 550, 20);
-  
+
+  text("Generation : " + str(generation - 1), 550, 20);
+
   //Graph Box
-  
+
   fill(0);
-  rect(500,100,200,200);
-  
+  rect(500, 100, 200, 200);
+
   // Buttons 
-  
+
   b1.draw();
   b2.draw();
   b3.draw();
@@ -143,7 +142,7 @@ function draw() {
   b5.draw();
   b6.draw();
   b7.draw();
-  
-  
-  
+
+
+
 }

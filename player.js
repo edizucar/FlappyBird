@@ -1,7 +1,7 @@
 class Player {
   constructor() {
     this.timeLimit = 5000;
-    
+
     this.color = [random(255), random(255), random(255)];
     this.pos = createVector(50, 200);
     this.vel = createVector(0, 0);
@@ -22,9 +22,8 @@ class Player {
       if (this.time > this.timeLimit) {
         this.dead = true;
       }
-    }
-    else {
-      let v = createVector(-1,0);
+    } else {
+      let v = createVector(-1, 0);
       this.pos.add(v);
     }
   }
@@ -39,10 +38,10 @@ class Player {
   }
 
   bounce(closestPipe) {
-		if (this.nn.bounce(this.vel.y, closestPipe.pos.x, this.pos.y, closestPipe.topLen)) {
-    	let l = createVector(0, -4);
-    	this.vel = l.copy();
-  	}
+    if (this.nn.bounce(this.vel.y, closestPipe.pos.x, this.pos.y, closestPipe.topLen)) {
+      let l = createVector(0, -4);
+      this.vel = l.copy();
+    }
   }
 
   floorCeil() {

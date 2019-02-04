@@ -9,30 +9,28 @@ class Button {
   }
   update() {
     if (mouseIsPressed) {
-      let m = createVector(mouseX,mouseY);
-      let v= createVector(this.x, this.y);
+      let m = createVector(mouseX, mouseY);
+      let v = createVector(this.x, this.y);
       v.sub(m);
       if (v.mag() < this.radius) {
         this.active = true;
-      }
-      else {
+      } else {
         this.active = false;
       }
     }
-    
+
   }
-  
+
   draw() {
     this.update();
-    
+
     if (!this.active) {
-    	fill(this.color[0], this.color[1], this.color[2]);
-    }
-    else {
-      fill(0,0,0);
+      fill(this.color[0], this.color[1], this.color[2]);
+    } else {
+      fill(0, 0, 0);
     }
     ellipse(this.x, this.y, this.radius, this.radius);
-    
+
     if (this.active) {
       // Draw Graph
     }

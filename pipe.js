@@ -4,7 +4,7 @@ class Pipe {
     this.pos = createVector(400, 0);
     this.pipeMax = 10;
     this.pipeWidth = 20;
-    this.topLen = random(this.pipeMax,400 - this.pipeMax * 2 - this.gap);
+    this.topLen = random(this.pipeMax, 400 - this.pipeMax * 2 - this.gap);
   }
   update() {
     this.pos.x -= 1;

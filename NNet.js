@@ -7,7 +7,7 @@ class NN {
     for (i = 0; i < 5; i++) {
       append(this.centresN, new Node(4));
     }
-    
+
     for (i = 0; i < 2; i++) {
       append(this.outputsN, new Node(5));
     }
@@ -28,8 +28,7 @@ class NN {
 
     if (jump > donut) {
       return true;
-    } 
-		else {
+    } else {
       return false;
     }
   }
