@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-    this.timeLimit = 5000;
+    this.timeLimit = 10000;
 
     this.color = [random(255), random(255), random(255)];
     this.pos = createVector(50, 200);
