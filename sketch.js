@@ -8,6 +8,8 @@ let generation = 1;
 let b1, b2, b3, b4, b5, b6, b7;
 let video;
 
+// Testing Tillmans Account
+
 function setup() {
   createCanvas(800, 400);
   append(p, new Pipe());
