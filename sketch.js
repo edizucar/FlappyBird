@@ -17,8 +17,6 @@ function setup() {
   g = createVector(0, 0.2);
   textSize(30);
   frameRate(1000);
-  video = createCapture(VIDEO);
-  video.hide();
 
   //Buttons
   let buttonGap = 40;
@@ -41,12 +39,6 @@ function draw() {
     frames += 1;
     background(34, 128, 178);
 
-    // Puts a flipped video on the background
-    push();
-    scale(-1, 1);
-    translate(-400, 0);
-    image(video, 0, 0, 400, 400);
-    pop();
 
 
     for (i = 0; i < p.length; i++) {
